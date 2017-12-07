@@ -1,0 +1,41 @@
+
+  <div class="container col-lg-offset-3 col-lg-6 bg-white">
+
+
+    <div class="lead font-style text-left">
+      <h1><a ng-href="/">Welcome to BookItAlready</a></h1> 
+      <p>Helping artists and venues find each other.</p>
+    </div>
+
+    <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">{{lc.message}}</h1>
+
+
+
+    <form ng-submit="lc.registerUser()"  class="form-inline">
+      <div class="form-group">   
+	<label for="email">Email:</label>
+	<input type="email" ng-model="lc.user.username" />
+      </div>
+      <div class="form-group">   
+	<label for="password">Password:</label>
+	<input type="password" ng-model="lc.user.password" />
+      </div>
+      <div class="form-group">   
+	<label for="memberType">Type:</label>
+	<select class="form-control" name="memberType" ng-model="lc.user.type" style="width:100px;">
+	  <option value="artist">Artist</option>
+	  <option value="venue">Venue</option>
+	</select>
+
+      <div class="form-group xtr-pad" ng-if="lc.user.type=='venue'" ng-include="'/views/partials/venue/register.html'"></div>
+      <div class="form-group" ng-if="lc.user.type=='artist'" ng-include="'/views/partials/artist/register.html'"></div>
+
+      </div>
+
+
+
+  </div>
+  </form>
+</div>
+
+</div>

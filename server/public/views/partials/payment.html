@@ -1,0 +1,14 @@
+<div class="">
+<form role="form" class="form-inline" ng-controller="PayController as vm">
+  <font size="4em" color="#fff">Buy me a</font>
+  <select class="form-control" name="itemCondition" ng-model="vm.payAmt">
+    <option value="3">Tea</option>
+    <option value="5">Beer</option>
+    <option value="10">Blunt</option>
+  </select>
+
+ <img src="icons/squarecash.png" height="36" width="36" ng-click="vm.getMoney('sq')" />
+ <img src="icons/Venmo.png" height="36" width="36" ng-click="vm.getMoney('vmo')" />
+ <img src="icons/paypal.png" height="36" width="36" ng-click="vm.getMoney('pp')" />
+</form>
+</div>

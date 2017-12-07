@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>MnActivist Community Calendar</title>
+
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="description" content="Calendar of events for cities, counties and the Minnesota State Legislature." />
+    <meta name="robots" content="index,follow" />
+    
+    <link rel="stylesheet" href="vendors/bootstrap.min.css">
+    <script type="text/javascript" src="vendors/jquery3.min.js"></script>
+    <script src="https://use.fontawesome.com/77c02f3a95.js"></script>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjnwSh4cLamvmVk3U-j6lFzfd2fuzxO2I&libraries=places" async defer></script>
+
+    <link href="vendors/angular-material/angular-material.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="vendors/leaflet/leaflet.css" />
+    <script type="text/javascript" src="vendors/leaflet/leaflet.js"></script>
+    <script type="text/javascript" src="vendors/leaflet/leafletembed.js"></script>
+
+    <script src="vendors/angular.min.js"></script>
+    <script src="vendors/angular-route.min.js"></script>
+
+    <script src="vendors/angular-animate/angular-animate.js" type="text/javascript" ></script>
+    <script src="vendors/angular-aria/angular-aria.js" type="text/javascript" ></script>
+    <script src="vendors/angular-material/angular-material.js" type="text/javascript" ></script>
+
+    <script src="vendors/ng-map.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="vendors/angular-xeditable/dist/css/xeditable.css" />
+    <script src="vendors/angular-xeditable/dist/js/xeditable.min.js"></script>
+
+    <script src="vendors/marked.min.js"></script>
+    <script src="vendors/angular-marked.min.js"></script>
+
+    <script src="scripts/client.js"></script>
+
+    <!-- SERVICES -->
+
+
+    <script src="services/base.service.js"></script>
+    <script src="services/org.service.js"></script>
+    <script src="services/user.service.js"></script>
+
+    <!-- CONTROLLERS -->
+    <script src="controllers/user.controller.js"></script>
+    <script src="controllers/login.controller.js"></script>
+    <script src="controllers/home.controller.js"></script>
+    <script src="controllers/org.controller.js"></script>
+    <script src="controllers/aux.controller.js"></script>
+    <script src="controllers/city.controller.js"></script>
+
+    
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Indie+Flower|Lora|Kaushan+Script" rel="stylesheet">
+
+  </head>
+
+  <body ng-app="MnApp" ng-controller="AuxController as ax">
+
+    <div ng-include="'/views/partials/header.html'"></div>
+      <div class="col-xs-12" ng-if="ax.about" ng-include="'/views/partials/mailchimp.html'"></div>
+    <ng-view class="main col-lg-12 col-md-12 col-sm-12 col-xs-12" />
+
+
+  </body>
+
+
+</html>

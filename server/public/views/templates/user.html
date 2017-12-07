@@ -1,0 +1,4 @@
+<div class="container col-lg-10 col-lg-offset-1 bg-white">
+    <div ng-if="uc.userObject.type=='artist'" ng-include="'/views/partials/artist/home.html'"></div>
+    <div ng-if="uc.userObject.type=='venue'" ng-include="'/views/partials/venue/home.html'"></div>
+</div>

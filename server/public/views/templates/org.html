@@ -1,0 +1,45 @@
+<div ng-if="!ax.about" class="container col-lg-10 col-lg-offset-1 bg-white">
+  <!--  {{ vc.userService.userDetails }} -->
+  <div>
+    <h1>
+      <div class="pull-left">
+	{{oc.orgs.single.name}}
+      </div>
+      <div ng-if="oc.orgs.single.name.calendar==='govt'" class="pull-right">
+	<a ng-href="" ng-click="oc.voteUp(oc.userDetails.user_id, oc.venues.single.id)"><i class="fa fa-thumbs-up" aria-hidden="true"></i></a> {{ oc.orgs.single.up_vote }}
+	<br />
+	<a ng-click="oc.voteDown(oc.userDetails.user_id, oc.venues.single.id)"><i class="fa fa-thumbs-down" aria-hidden="true"></i></a> {{ oc.venues.single.down_vote }}
+      </div>
+    </h1>
+
+    <hr />
+    
+
+    <div class="base-div col-xs-10" ng-if="oc.orgs.single.address">{{ oc.orgs.single.address}} </div>
+    <div class="base-div col-xs-10" ng-if="oc.orgs.single.city_str">{{ oc.orgs.single.city_str}} </div>
+    
+
+    <div class="base-div col-xs-10" marked="oc.orgs.single.notes"></div>
+
+    <div class="col-xs-10">
+      <div class="col-lg-5">
+	<h3 >Upcoming Meetings</h3>
+	<div ng-repeat="ev in oc.orgs.single.events">
+	  {{ ev.time | date: 'shortDate' }} | {{ ev.address }}
+	</div>
+      </div>
+
+
+      <div class="col-lg-5" ng-if="oc.orgs.single.org_name.memberships.length > 0">
+	<h3 >Members</h3>
+	<div ng-repeat="mb in oc.orgs.single.org_name.memberships">
+	  {{ mb.person.name }} <span ng-if="mb.post.id">({{ mb.post.label }})</span>
+	</div>
+      </div>
+    </div>
+
+    <div class="hidden">
+      <a href="{{ vc.venues.single.phone }}">Phone</a>
+    </div>
+  </div>
+</div>

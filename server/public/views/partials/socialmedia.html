@@ -1,0 +1,19 @@
+<div class="socialDiv text-center">
+  <span><i ng-click="vm.socChange('twitter')" class="fa fa-twitter" aria-hidden="true"></i></span>
+  <span><i ng-click="vm.socChange('github')" class="fa fa-github-alt" aria-hidden="true"></i></span>
+  <span><i ng-click="vm.socChange('projects')" class="fa fa-code" aria-hidden="true"></i></span>
+  <!--    <span><i ng-click="vm.socChange('linkedin')" class="fa fa-linkedin" aria-hidden="true"></i></span> -->
+  <span><i ng-click="vm.socChange('instagram')" class="fa fa-instagram" aria-hidden="true"></i></span>
+  <!--    <span><a ng-click="vm.socChange('github')">GitHub</a></span>
+	  <span><a ng-click="vm.socChange('projects')">Projects</a></span>
+	  <span><a ng-click="vm.socChange('linkedin')">LinkedIn</a></span>
+	  <span><a ng-click="vm.socChange('instagram')">Instagram</a></span>-->
+</div>
+
+<div class="row-fluid">
+  <div id="github" style="display: none;" class="base-div" ng-include="'/views/partials/socialmedia/github.html'" ></div>
+  <div id="twitter" style="display: block;" class="base-div" ng-include="'/views/partials/socialmedia/twitter.html'"></div>
+  <div id="linkedDiv" class="base-div" ng-include="'/views/partials/socialmedia/linkedin.html'"></div>
+  <div id="instagram" style="display: none" class="base-div" ng-include="'/views/partials/socialmedia/instagram.html'"></div>
+  <div id="projects" style="display: none" class="base-div" ng-include="'/views/partials/socialmedia/projects.html'"></div>
+</div>

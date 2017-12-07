@@ -1,0 +1,7 @@
+  <input type="text" ng-model="ax.org_search" placeholder="Search Events" size="50" style="font-size: 1.75em;" />
+
+<div class="review-box" ng-repeat="org in ax.orgs.list | filter:ax.org_search">
+  {{ org.name }} | {{ org.type }}
+</div>
+
+

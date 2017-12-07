@@ -1,0 +1,24 @@
+<div ng-if="!ax.about" id="postContainer" class="col-lg-8 col-lg-offset-2 bg-white text-center">  
+  <input type="text" ng-model="hc.search" placeholder="Search Events" style="font-size: 1.75em;" />
+
+  <div ng-repeat="ev in hc.events.list | filter:hc.search | limitTo: '25'" class="review-box">
+    <div class="base-div row {{ ev.calendar }}">
+      <div class="pull-right"> {{ ev.time | date :  "short"  }}  </div>
+      <div class="pull-left" style="padding-left:10px;">{{ ev.city.city_name.name }}</div>
+    </div>
+    <h3 class="kaushan">{{ ev.title }}</h3>
+    <div ng-if="ev.address && ev.address != 'N/A'">{{ ev.address }}</div> 
+
+    <span ng-if="ev.public_hearing"><a href="{{ev.url}}">PH</a></span>
+
+<!--    <h5 ng-if="ev.host_org.name != ev.title"><a href="/#!/org/{{ ev.host_org.id }}">{{ ev.host_org.name }}</a></h5> -->
+    <h4 ng-if="ev.host_org.name != ev.title">{{ ev.host_org.name }}</h4>
+
+    <a class="kaushan pull-left btn" ng-if="ev.url" ng-href="{{ ev.url }}">Event Link</a>
+    <div ng-if="ev.notes">
+      <a class="pull-left kaushan btn" ng-click="toggleNotes[$index] = !toggleNotes[$index]">Notes</a>
+      <br /><br />
+      <div ng-if="toggleNotes[$index]" marked="ev.notes" class="text-left"></div>	
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+  <h1>MnActivist</h1> 
+  <p>Helping you get involved!</p>
+
+  <a href="https://thisismpls.com">Voting Guide</a>
+  <a href="https://mspvotes.org">MSP Votes</a>
+
+  <br />
+
+  ORGS
+
+  <input type="text" ng-model="hc.search" placeholder="Search" />
+  <div class="review-box" ng-repeat="ev in hc.orgs.list | filter:hc.search | limitTo: '25'">
+    <div class="base-div">
+      <div class="pull-right"> {{ ev.time | date :  "short"  }} </div>
+      <div class="pull-left">{{ ev.city.city_name.name }} </div>
+    </div>
+  
+    <h3>{{ ev.name }}</h3>
+
+    <span ng-if="ev.url"><a href="{{ev.url}}">Agenda</a></span>
+    <span ng-if="ev.public_hearing"><a href="{{ev.url}}">PH</a></span>
+        <h5><a href="/#!/org/{{ ev.host_org.id }}">{{ ev.host_org.name }}</a></h5>
+  </div>
